@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+import './css/style.css';
+
 var PLAYERS = [
   {
     name: "Boob MacPherson",
