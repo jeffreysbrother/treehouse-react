@@ -1,17 +1,17 @@
 // ReactDOM.render(<h1>Hey Dude</h1>, document.getElementById('container'));
 
 // components should start with a capital letter
-function Application() {
+function Application(props) {
   return (
     <div className="scoreboard">
       <div className="header">
-        <h1>Scoreboard</h1>
+        <h1>{props.title}</h1>
       </div>
 
       <div className="players">
         <div className="player">
           <div className="player-name">
-            James C.
+            James Cool
           </div>
           <div className="player-score">
             <div className="counter">
@@ -25,5 +25,7 @@ function Application() {
     </div>
   );
 }
-
-ReactDOM.render(<Application />, document.getElementById('container'));
+Application.propTypes = {
+  title: React.PropTypes.string
+}
+ReactDOM.render(<Application title="Scoreboard"/>, document.getElementById('container'));
