@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-
 import './css/style.css';
 
 var PLAYERS = [
@@ -270,5 +269,6 @@ var Application = React.createClass({
     );
   }
 });
+
 
 ReactDOM.render(<Application initialPlayers={PLAYERS}/>, document.getElementById('container'));
