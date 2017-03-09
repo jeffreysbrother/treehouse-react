@@ -31,7 +31,11 @@ Header.propTypes = {
 }
 
 // component class (versus a stateless functional component)
+// we use this when state is necessary
 var Counter = React.createClass({
+  propTypes: {
+    score: React.PropTypes.number.isRequired,
+  },
   render: function() {
     return (
       <div className="counter">
@@ -43,7 +47,7 @@ var Counter = React.createClass({
   }
 });
 
-// unused statless functional component EXAMPLE
+// unused stateless functional component EXAMPLE
 // function Counter(props) {
 //   return (
 //     <div className="counter">
@@ -54,9 +58,9 @@ var Counter = React.createClass({
 //   );
 // }
 
-Counter.propTypes = {
-  score: React.PropTypes.number.isRequired,
-}
+// Counter.propTypes = {
+//   score: React.PropTypes.number.isRequired,
+// }
 
 function Player(props) {
   return (
