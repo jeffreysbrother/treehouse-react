@@ -1,4 +1,5 @@
-// ReactDOM.render(<h1>Hey Dude</h1>, document.getElementById('container'));
+import React from 'react';
+import ReactDOM from 'react-dom';
 
 var PLAYERS = [
   {
