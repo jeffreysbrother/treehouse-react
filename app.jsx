@@ -33,15 +33,28 @@ Header.propTypes = {
 // component class (versus a stateless functional component)
 // we use this when state is necessary
 var Counter = React.createClass({
-  propTypes: {
-    score: React.PropTypes.number.isRequired,
+  propTypes: {},
+  getInitialState: function() {
+    return {
+      score: 0,
+    }
+  },
+  incrementScore: function(e) {
+    this.setState({
+      score: (this.state.score + 1),
+    })
+  },
+  decrementScore: function(e) {
+    this.setState({
+      score: (this.state.score - 1),
+    })
   },
   render: function() {
     return (
       <div className="counter">
-        <button className="counter-action decrement"> - </button>
-        <div className="counter-score"> {this.props.score} </div>
-        <button className="counter-action increment"> + </button>
+        <button className="counter-action decrement" onClick={this.decrementScore}> - </button>
+        <div className="counter-score"> {this.state.score} </div>
+        <button className="counter-action increment" onClick={this.incrementScore}> + </button>
       </div>
     );
   }
@@ -69,17 +82,17 @@ function Player(props) {
         {props.name}
       </div>
       <div className="player-score">
-        <Counter score={props.score}/>
+        <Counter />
       </div>
     </div>
   );
 }
 
 // not sure if I need this
-Player.propTypes = {
-  name: React.PropTypes.string.isRequired,
-  score: React.PropTypes.number.isRequired,
-}
+// Player.propTypes = {
+//   name: React.PropTypes.string.isRequired,
+//   score: React.PropTypes.number.isRequired,
+// }
 
 // components should start with a capital letter
 function Application(props) {
