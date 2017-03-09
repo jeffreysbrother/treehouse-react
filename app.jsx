@@ -18,6 +18,9 @@ var PLAYERS = [
   },
 ];
 
+
+
+
 function Header(props) {
   return (
     <div className="header">
@@ -29,6 +32,7 @@ function Header(props) {
 Header.propTypes = {
   title: React.PropTypes.string.isRequired,
 }
+
 
 
 
@@ -46,6 +50,8 @@ Counter.propTypes = {
   score: React.PropTypes.number.isRequired,
   onChange: React.PropTypes.func.isRequired,
 }
+
+
 
 
 
@@ -68,6 +74,10 @@ Player.propTypes = {
   score: React.PropTypes.number.isRequired,
   onScoreChange: React.PropTypes.func.isRequired,
 }
+
+
+
+
 
 var Application = React.createClass({
   propTypes: {
@@ -116,6 +126,5 @@ var Application = React.createClass({
     );
   }
 });
-
 
 ReactDOM.render(<Application initialPlayers={PLAYERS}/>, document.getElementById('container'));
