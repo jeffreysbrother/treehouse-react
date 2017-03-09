@@ -33,10 +33,12 @@ Header.propTypes = {
 // component class (versus a stateless functional component)
 // we use this when state is necessary
 var Counter = React.createClass({
-  propTypes: {},
+  propTypes: {
+    initialScore: React.PropTypes.number.isRequired,
+  },
   getInitialState: function() {
     return {
-      score: 0,
+      score: this.props.initialScore,
     }
   },
   incrementScore: function(e) {
@@ -82,7 +84,7 @@ function Player(props) {
         {props.name}
       </div>
       <div className="player-score">
-        <Counter />
+        <Counter initialScore={props.score}/>
       </div>
     </div>
   );
